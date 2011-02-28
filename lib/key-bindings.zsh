@@ -2,8 +2,8 @@
 
 bindkey -e
 bindkey '\ew' kill-region
-bindkey -s '\el' "ls\n"
-bindkey -s '\e.' "..\n"
+#bindkey -s '\el' "ls\n"
+#bindkey -s '\e.' "..\n"
 bindkey '^r' history-incremental-search-backward
 bindkey "^[[5~" up-line-or-history
 bindkey "^[[6~" down-line-or-history
@@ -49,3 +49,9 @@ bindkey "\e[3~" delete-char
 ## Fix weird sequence that rxvt produces
 #bindkey -s '^[[Z' '\t'
 #
+
+#Completion in the middle of a line
+bindkey '^i' expand-or-complete-prefix
+##pushes current command on command stack and gives blank line, after that line runs command stack is popped
+bindkey "^t" push-line-or-edit
+
